@@ -18,44 +18,48 @@ public class UserTests {
 		String test_last_name = "Smith";
 		String test_mobile_number = "07771234567";
 		
+		String [] condition_values = {test_username, test_password, test_first_name, test_last_name, test_mobile_number};
+				
+		String [] failure_results = {"TC1 Failed: username did not match", "TC2 Failed: password did not match","TC3 Failed: first name did not match", "TC4 Failed: last name did not match", "TC5 Failed: mobile number did not match"};
+		String [] success_results = {"TC1 Succeeded: username did match", "TC2 Succeeded: password did match", "TC3 Succeeded: first name did match", "TC4 Succeeded: last name did match", "TC5 Succeeded: mobile number did match"};
+		
 		User testUser = new User(test_username, test_password, test_first_name, test_last_name, test_mobile_number);
 		
 		Boolean passed = true;
-		
+	
 		if (testUser.getUsername() != test_username) {
-			System.out.println("TC1 Failed: username did not match");
+			System.out.println(failure_results[0]);
 			passed = false;
 		} else {
-			System.out.println("TC1 Succeeded: username did match");	
+			System.out.println(success_results[0]);
 		}
-		
 		if(testUser.getPassword() != test_password) {
-			System.out.println("TC2 Failed: password did not match");
+			System.out.println(failure_results[1]);
 			passed = false;
 		} else {
-			System.out.println("TC2 Succeeded: password did match");	
+			System.out.println(success_results[1]);
 		}
 		
 		if(testUser.getFirst_name() != test_first_name) {
-			System.out.println("TC3 Failed: first name did not match");
+			System.out.println(failure_results[2]);
 			passed = false;
 		} else {
-			System.out.println("TC3 Succeeded: first name did match");	
+			System.out.println(success_results[2]);
 		}
-		
 		if(testUser.getLast_name() != test_last_name) {
-			System.out.println("TC4 Failed: last name did not match");
+			System.out.println(failure_results[3]);
 			passed = false;
 		} else {
-			System.out.println("TC4 Succeeded: last name did match");	
+			System.out.println(success_results[3]);
+		}
+		if(testUser.getMobile_number() != test_mobile_number) {
+			System.out.println(failure_results[4]);
+			passed = false;
+		} else {
+			System.out.println(success_results[4]);
 		}
 		
-		if(testUser.getMobile_number() != test_mobile_number) {
-			System.out.println("TC5 Failed: mobile number did not match");
-			passed = false;
-		} else {
-			System.out.println("TC5 Succeeded: mobile number did match");	
-		}
+
 		
 		if(passed) {
 			System.out.println("All test conditions passed");
