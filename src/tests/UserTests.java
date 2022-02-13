@@ -17,9 +17,7 @@ public class UserTests {
 		String test_first_name = "Mike";
 		String test_last_name = "Smith";
 		String test_mobile_number = "07771234567";
-		
-		String [] condition_values = {test_username, test_password, test_first_name, test_last_name, test_mobile_number};
-				
+						
 		String [] failure_results = {"TC1 Failed: username did not match", "TC2 Failed: password did not match","TC3 Failed: first name did not match", "TC4 Failed: last name did not match", "TC5 Failed: mobile number did not match"};
 		String [] success_results = {"TC1 Succeeded: username did match", "TC2 Succeeded: password did match", "TC3 Succeeded: first name did match", "TC4 Succeeded: last name did match", "TC5 Succeeded: mobile number did match"};
 		
@@ -66,6 +64,17 @@ public class UserTests {
 		} else {
 			System.out.println("One of the test conditions have failed.");
 		}
-
+		
+		// Assertions
+		assert testUser.getUsername() == test_username;
+		assert testUser.getPassword() == test_password;
+		assert testUser.getFirst_name() == test_first_name;
+		assert testUser.getLast_name() == test_last_name;
+		assert testUser.getMobile_number() == test_mobile_number;
+		
+		assert 1==2;
+		
+		System.out.println("All Java assertions in the test suite passed (none failed).");
+		
 	}
 }
