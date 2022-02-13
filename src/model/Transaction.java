@@ -9,7 +9,7 @@ import java.util.Date;
  * @author 40226787
  *
  */
-public class Transfer {
+public class Transaction {
 	private String account_number;
 	private double transaction_amount;
 	private Date transaction_date;
@@ -18,7 +18,7 @@ public class Transfer {
 	 * @param transaction_amount
 	 * @param transaction_date
 	 */
-	public Transfer(String account_number, double transaction_amount, Date transaction_date) {
+	public Transaction(String account_number, double transaction_amount, Date transaction_date) {
 		super();
 		this.account_number = account_number;
 		this.transaction_amount = transaction_amount;
